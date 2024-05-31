@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/first_app/about/">About</a>
+        <a href="/first_app/contact/">Contact</a>
+        <a href="/first_app/templatefilter/">Template</a>
+    </div>
+    <h1>Template page</h1>
+    <hr>
+    <h2> IF CONDITION<h2>
+    {% if age >= 20 %}
+        <p>You are able to get married</p>
+    {% elif age >= 15 and age < 20 %}
+        <p>Wait Some time </p>
+    {% else %}
+        <p> Tumi picci </p>
+    {% endif %}
+
+<hr>
+    <p> for loop </p>
+
+    {% for i in course %}
+            <h3>{{i.id}} {{i.course}} {{i.fee}}</h3>
+    {% endfor %}
+
+    <hr>
+    <p>filtaing</p>
+
+    <p>{{ lst | join:" - " }}</p>
+    <p>{{ lst | join:"  " }}</p>
+    <p>{{ lst | join:" // " }}</p>
+
+    <p>{{ dob | date:"D d M Y" }}</p>
+    <p>{{ dob |date:"SHORT_DATE_FORMAT" }}</p>
+    <p>{{ 20 | add:"5" }}</p>
+    {% comment %} #<p>{{ numbers | add:"[4, 5, 6]" }}</p> {% endcomment %}
+    <p>{{ Name | capfirst }}</p>
+    <p>{{ 'I Love Bangladesh' | cut:" " }}</p>
+    <p>{{ lst | length }}</p>
+    <p>{{ 'Its a new day' | title }}</p>
+</body>
+</html>
